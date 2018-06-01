@@ -1,0 +1,16 @@
+INSERT INTO burgers (burger_name, devoured) VALUES ("BACON BACON BACON!", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Brussel Sproute", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Hummus and Carrots", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Pineapple Teriyaki", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("BBQ Bacon", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Durian Explosion", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Classic American", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Fluffer Nutter", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Eggstravaganza", TRUE;
+INSERT INTO burgers (burger_name, devoured) VALUES ("Mike and Ike", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("The Craig T. Nelson", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Maple Syrup", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Bacon Avocado", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Pepper Jack Boss", TRUE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Pickled Pigs Feet", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("So Much Cheese", TRUE);
