@@ -3,8 +3,11 @@ var burgers = require("../models/burger.js")
 
 var router = express.Router();
 
+router.get("/", function(req,res){
+  res.redirect("/index");
+})
 // Create all our routes and set up logic within those routes where required.
-router.get("/index  ", function(req, res) {
+router.get("/index", function(req, res) {
     burgers.selectAll(function(data) {
       var burgers_data = {
         burgers: data

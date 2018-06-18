@@ -1,26 +1,27 @@
+  <div class="container">
+    <div class="row">
 <h1>Eat Da Burger</h1>
-
 <ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers devoured=false}}
-    {{/unless}}
-  {{/each}}
+  {{#each burgers}} {{#unless this.devoured}}
+  <li>{{this.burger_name}}<button class="eat-burger" data-id="{{id}}" data-eat-burger="{{devoured}}">
+		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button></li>
+  {{/unless}} {{/each}}
 </ul>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-
 <form class="create-form">
-
   <div class="form-group">
-    <input type="text" id="createBurger" name="name">
+    <input type="text" id="createBurger" name="burger/create">
   </div>
-    <button type="submit">Add Burger</button>
+  <button type="submit">Add Burger</button>
 </form>
+
+<ul>
+  <h3>Devoured</h3>
+  {{#each burgers}} {{#if devoured}}
+  <li>{{this.burger_name}}</li>
+  {{/if}} {{/each}}
+</ul>
+
+
+</div>
+</div>

@@ -7,12 +7,13 @@ var connection = require("./connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
-  selectAll: function(table) {
+  selectAll: function(table, cb) {
     // function for selecting all properties from burgers_db
     var queryString = "SELECT * FROM burgers";
     connection.query(queryString, [table], function(err, result) {
       if (err) throw err;
       console.log(result);
+      cb(result);
     });
   },
   insertOne: function(burger_name, devoured) {
