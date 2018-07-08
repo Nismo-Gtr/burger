@@ -4,7 +4,7 @@
 <ul>
   {{#each burgers}} {{#unless this.devoured}}
   <li>{{this.burger_name}}<button class="eat-burger" data-id="{{id}}" data-eat-burger="{{devoured}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+		{{#if this.devoured}}Devoured!{{else}}Eat Burger{{/if}}
 	</button></li>
   {{/unless}} {{/each}}
 </ul>
