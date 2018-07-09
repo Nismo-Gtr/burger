@@ -1,32 +1,42 @@
-var express = require("express");
-var body = require("body-parser");
 
-var PORT = process.env.PORT || 8889;
+// Step 1: Created a Customer model in ./models/customer.js
+// Step 2: Updated the Burger model to have a hasOne(models.Customer) relation
+// Step 3: Updated the handlebars to display a customers name if there's a 'Customers' property on the Burger
+// Step 4: Updated queries in burgerController for updating a burger to add the CustomerId
+// Step 5: Updated findAll query  in burger_controller for burgers to "include" the customer
+// Step 6: Updated findAll query in burger_controller to order returned burgers by burger_name.
+
+
+var express = require("express");
+var bodyParser = require("body-parser");
+
+// bring in the models
+var db = require("./models");
 
 var app = express();
-
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
-app.use(body.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
-// parse application/json
-app.use(body.json());
-
-// Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+  defaultLayout: "main"
+}));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-var routes = require("./controllers/burgers_controller.js");
+var routes = require("./controllers/burgers_controller");
 
 app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
+// listen on port 3000
+var PORT = process.env.PORT || 3000;
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
